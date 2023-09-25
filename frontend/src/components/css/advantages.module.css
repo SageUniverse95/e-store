@@ -1,0 +1,23 @@
+.mainWrapper {
+    display: flex;
+}
+
+.circleWrapper {
+    display: flex;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    background-color: #ffebee;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.icon {
+    margin-left: 17px;
+    color: #f44336;
+}
+

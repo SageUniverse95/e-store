@@ -6,6 +6,7 @@
         "@emotion/react": "^11.11.1",
         "@emotion/styled": "^11.11.0",
         "@mui/icons-material": "^5.14.9",
+        "@mui/lab": "^5.0.0-alpha.145",
         "@mui/material": "^5.14.8",
         "@testing-library/jest-dom": "^5.17.0",
         "@testing-library/react": "^13.4.0",
@@ -41,8 +42,8 @@
         ]
     },
     "devDependencies": {
-        "eslint": "^8.49.0",
         "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-react": "^7.33.2",
         "prettier": "3.0.3"
     }
 }

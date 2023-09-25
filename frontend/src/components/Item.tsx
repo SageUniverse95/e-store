@@ -1,6 +1,13 @@
 import { IProduct } from '../types';
-import style from './item.module.css';
+import style from './css/item.module.css';
 import { Link } from 'react-router-dom';
+import { CardActions } from '@mui/material';
+import { useState } from 'react';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import IconButton from '@mui/material/IconButton';
+import { Button } from '@mui/material';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import { Counter } from './Counter';
 
 export const Card = ({
     category,
@@ -11,6 +18,9 @@ export const Card = ({
     rating,
     title,
 }: IProduct) => {
+    const [isFavorite, setFavorite] = useState<boolean>(false);
+    const [isAdd, setAdd] = useState<boolean>(false);
+    const handleAddFavorite = () => setFavorite(!isFavorite);
     return (
         <div className={style.wrapper}>
             <div className={style.imgWrapper}>
@@ -32,7 +42,24 @@ export const Card = ({
             </div>
             <div className={style.description}>{description}</div>
             <div className={style.addButtonWrapper}>
-                <button className={style.btn}>ADD</button>
+                <CardActions>
+                    <IconButton onClick={handleAddFavorite}>
+                        <FavoriteIcon
+                            sx={{ color: isFavorite ? 'red' : null }}
+                        />
+                    </IconButton>
+                </CardActions>
+                {isAdd ? (
+                    <Counter func = {setAdd} />
+                ) : (
+                    <Button
+                        onClick={() => setAdd(true)}
+                        variant="contained"
+                        endIcon={<ShoppingBasketIcon />}
+                    >
+                        Add
+                    </Button>
+                )}
             </div>
         </div>
     );

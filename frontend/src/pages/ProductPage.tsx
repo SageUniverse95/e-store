@@ -2,9 +2,10 @@ import { useParams } from 'react-router-dom';
 import { getProduct } from '../utils/api';
 import { useEffect, useState } from 'react';
 import { IProduct } from '../types';
-import Backdrop from '@mui/material/Backdrop';
 import { Card } from '../components/Item';
 import CircularProgress from '@mui/material/CircularProgress';
+import { Slider } from '../components/Slider';
+import { DescriptionProd } from '../components/DescriptionProd';
 
 export const ProductPage = () => {
     const { id } = useParams();
@@ -14,11 +15,16 @@ export const ProductPage = () => {
             getProduct(id).then((data) => setItem(data));
         }
         return;
-    });
+    }, []);
+
+    const handlePage = (item: IProduct) => {
+        
+    }
 
     return (
         <div>
             {item ? <Card {...item} /> : <CircularProgress color="inherit" />}
+            <DescriptionProd {...item}/>
         </div>
     );
 };

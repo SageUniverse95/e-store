@@ -16,3 +16,7 @@ interface Rating {
     count: number;
     rate: number;
 }
+
+
+
+

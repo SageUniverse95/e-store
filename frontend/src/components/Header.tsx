@@ -20,7 +20,15 @@ export const Header = () => {
     return (
         <AppBar sx={{ background: 'white' }}>
             <Toolbar sx={{ justifyContent: 'space-evenly' }}>
-                <Typography sx={{ color: 'black', fontSize: '35px' }}>
+                <Typography
+                    component={'a'}
+                    href="/"
+                    sx={{
+                        color: 'black',
+                        fontSize: '35px',
+                        textDecoration: 'none',
+                    }}
+                >
                     MyStore
                 </Typography>
                 <Box sx={{ display: 'flex' }}>
