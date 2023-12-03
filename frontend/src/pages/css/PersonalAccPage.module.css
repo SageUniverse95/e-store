@@ -1,0 +1,9 @@
+.menuItem {
+  align-items: center;
+  margin-bottom: 24px;
+  display: flex;
+}
+
+.menuIcon {
+  margin-right: 8px;
+}

@@ -12,6 +12,8 @@ export interface IProducts {
     products: IProduct[];
 }
 
+
+
 interface Rating {
     count: number;
     rate: number;

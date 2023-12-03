@@ -1,16 +1,30 @@
 import { TabList, TabPanel, TabContext } from '@mui/lab';
 import { Tab } from '@mui/material';
 import { useState } from 'react';
-import { IProduct } from '../types';
-import { description } from '../customData';
-import { IDescription } from '../customData';
+import style from './css/DescriptMenu.module.css';
 
 export const DescriptionProd = (props: any) => {
     const [value, setValue] = useState('1');
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
         setValue(newValue);
     };
-    const test = Object.keys(description);
+    const { description } = props;
+    const Menu = ({ description }: any) => {
+        if (description) {
+            return (
+                <div className={style.menu}>
+                    {Object.keys(description).map((item: string) => (
+                        <div className={style.item}>
+                            <div>{item}</div>
+                            <div className={style.dotted}></div>
+                            <div>{description[item]}</div>
+                        </div>
+                    ))}
+                </div>
+            );
+        }
+        return null;
+    };
 
     return (
         <div>
@@ -23,29 +37,14 @@ export const DescriptionProd = (props: any) => {
                 <div>
                     <TabPanel value="1">
                         <div style={{ width: '576px', height: '60px' }}>
-                            <span>{props.description}</span>
+                            <span>{description}</span>
                         </div>
                         <div>
-                            {test.map((key) => {
-                                return (
-                                    <div>
-                                        <p>
-                                            <span>
-                                                <span>{key}</span>
-                                                <span>{'..............'}</span>
-                                            </span>
-                                            <span>{description[key]}</span>
-                                        </p>
-                                    </div>
-                                );
-                            })}
+                            <Menu {...description} />
                         </div>
                     </TabPanel>
                 </div>
             </TabContext>
-            <div>
-                
-            </div>
         </div>
     );
 };

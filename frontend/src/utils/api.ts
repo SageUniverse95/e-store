@@ -11,3 +11,9 @@ export const getProduct = async (id: number | string) => {
     const { data } = responce;
     return data;
 };
+
+export const getAllCategory = async () => {
+    const responce = await axios.get('https://fakestoreapi.com/products/categories')
+    const { data } = responce
+    return data;
+}

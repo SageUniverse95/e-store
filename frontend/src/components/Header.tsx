@@ -76,7 +76,7 @@ export const Header = () => {
                         />
                     </Box>
                     <Box sx={{ marginRight: '20px' }}>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography href='/signup' component='a' variant="body2" color="text.secondary">
                             Sign in
                         </Typography>
                         <Typography sx={{ color: 'black' }}>Account</Typography>

@@ -1,5 +1,5 @@
 import { IProduct } from '../types';
-import style from './css/item.module.css';
+import style from './css/Item.module.css';
 import { Link } from 'react-router-dom';
 import { CardActions } from '@mui/material';
 import { useState } from 'react';
@@ -21,6 +21,7 @@ export const Card = ({
     const [isFavorite, setFavorite] = useState<boolean>(false);
     const [isAdd, setAdd] = useState<boolean>(false);
     const handleAddFavorite = () => setFavorite(!isFavorite);
+    
     return (
         <div className={style.wrapper}>
             <div className={style.imgWrapper}>
@@ -32,9 +33,7 @@ export const Card = ({
                 />
             </div>
             <div className={style.categoryWrapper}>
-                <a href="*" className={style.categoryContent}>
-                    {category}
-                </a>
+                <Link to={'*'} className={style.categoryContent}></Link>
             </div>
             <div className={style.wrapperTitleAndPrice}>
                 <Link to={`/products/${id}`}>{title}</Link>
@@ -50,7 +49,7 @@ export const Card = ({
                     </IconButton>
                 </CardActions>
                 {isAdd ? (
-                    <Counter func = {setAdd} />
+                    <Counter handleClikc = {setAdd} />
                 ) : (
                     <Button
                         onClick={() => setAdd(true)}

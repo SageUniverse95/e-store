@@ -1,19 +1,14 @@
 import {
-    Button,
     Box,
     Typography,
     Menu,
-    MenuList,
-    Divider,
-    Paper,
     MenuItem,
 } from '@mui/material';
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { red } from '@mui/material/colors';
 import { useState } from 'react';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
 
 export const LeftSideMenu = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -38,7 +33,7 @@ export const LeftSideMenu = () => {
             <Menu
                 open={open}
                 anchorEl={anchorEl}
-                onClose={handleClick}
+                onClose={handleClose}
                 id="test-menu"
                 variant="selectedMenu"
             >

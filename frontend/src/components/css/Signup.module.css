@@ -1,0 +1,17 @@
+.formWrapper {
+    width: 300px;
+    height: 300px;
+}
+.testWrapper {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.input {
+    margin-bottom: 8px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

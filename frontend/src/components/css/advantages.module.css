@@ -1,5 +1,13 @@
 .mainWrapper {
     display: flex;
+    align-items: center;
+    margin-right: 120px;
+}
+
+.secondWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
 }
 
 .circleWrapper {

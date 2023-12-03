@@ -1,6 +1,6 @@
 import { IAdvantages } from '../customData';
 import { Typography } from '@mui/material';
-import style from './css/advantages.module.css';
+import style from './css/Advantages.module.css';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
@@ -28,22 +28,14 @@ export const Advantages = () => {
                     const { title, subTitle, typePicture } = item;
                     return (
                         <div
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                marginRight: ' 120px',
-                            }}
+                            className={style.mainWrapper}
                             key={index}
                         >
                             <div className={style.circle}>
                                 {handleIcon(typePicture)}
                             </div>
                             <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    marginRight: '30px',
-                                }}
+                                className={style.secondWrapper}
                             >
                                 <Typography fontSize="18px" variant="body2">
                                     {title}

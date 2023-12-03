@@ -17,10 +17,6 @@ export const ProductPage = () => {
         return;
     }, []);
 
-    const handlePage = (item: IProduct) => {
-        
-    }
-
     return (
         <div>
             {item ? <Card {...item} /> : <CircularProgress color="inherit" />}
